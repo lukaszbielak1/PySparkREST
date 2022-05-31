@@ -21,8 +21,8 @@ def main():
     t = Tender(spark)
     df = t.transform_data(max_pages = 30)
     print(df.count())
-    writer = DBhelper("","",".database.windows.net","")
-    writer.save_dataframe(df,"tender")
+    #writer = DBhelper("","",".database.windows.net","")
+    #writer.save_dataframe(df,"tender")
     
 
 if __name__ == '__main__':    
