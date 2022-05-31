@@ -17,7 +17,3 @@ class DBhelper:
         .option("driver", self.db_driver)\
         .option("password", self.db_password) \
         .save()
-
-
-
-    

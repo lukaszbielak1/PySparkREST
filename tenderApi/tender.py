@@ -42,4 +42,3 @@ class Tender:
                 .dropDuplicates()       
             )
         return data_frame
-
