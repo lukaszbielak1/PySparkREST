@@ -16,7 +16,7 @@ class Tender:
             ])
         self.data_frame = spark_context.createDataFrame([],self.schema)
 
-    def get_jobs(self, max_pages=-1):
+    def get_tenders(self, max_pages=-1):
         first_page = self.session.get(self.url).json()
         yield first_page
         if max_pages == -1:
@@ -28,7 +28,7 @@ class Tender:
             yield next_page
     
     def transform_data(self,max_pages):
-        for x in self.get_jobs(max_pages=max_pages): 
+        for x in self.get_tenders(max_pages=max_pages): 
             data_frame = self.data_frame\
                 .union(self.spark_context\
                 .read.option("multiline", "true")\
